@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --bg-dark: #050505;
+    --bg-dark-1: #0a0a0a;
+    --bg-card: #0f0f0f;
+
+    --clr-white: #ffffff;
+
+    --line: #131313;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-dark);
+}
+.content {
+    display: flex;
+    width: 300px;
+    height: 300px;
+    padding: 50px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    justify-content: end;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    transition: 300ms ease-in-out;
+    background-color: var(--bg-dark-1);
+    /* There is 2 way to use hover */
+    &:hover {
+        background-color: var(--bg-card);
+    }
+}
+.content:hover {
+    background-color: var(--bg-card);
+}
+.content .emojis {
+    top: 50%;
+    left: 50%;
+    display: flex;
+    position: absolute;
+    transition: 400ms ease-in-out;
+    transform: translate(-75%, -50%);
+}
+.content .emojis.change {
+    transform: translate(-25%, -50%);
+}
+.content .emoji {
+    width: 300px;
+}
+.content .emoji:nth-child(1) {
+    animation: pounding 1s ease-in-out infinite;
+}
+@keyframes pounding {
+    0%, 100% {
+        transform: scale(1.25);
+    } 50% {
+        transform: scale(1);
+    }
+}
+.content h1 {
+    font-size: 75px;
+}
+.content p {
+    font-size: 30px;
+    color: #ffffff;
+}
